@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: lsodini <lsodini@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/02 17:53:28 by marvin            #+#    #+#             */
-/*   Updated: 2024/02/02 17:53:28 by marvin           ###   ########.fr       */
+/*   Created: 2024/02/12 15:51:49 by lsodini           #+#    #+#             */
+/*   Updated: 2024/02/12 15:51:49 by lsodini          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int	ft_putchar(char c)
 {
 	write(1, &c, 1);
-	return (1)
+	return (1);
 }
 
 int	ft_print(va_list arg, const char wit)
@@ -57,7 +57,7 @@ int	ft_printf(const char *i, ...)
 	{
 		if (i[j] == '%')
 		{
-			tipo += ft_print(arg, i[j + i]);
+			tipo += ft_print(arg, i[j]);
 			j++;
 		}
 		else
@@ -71,24 +71,24 @@ int	ft_printf(const char *i, ...)
 // va_start = start iterating arguments with a va_list
 // va_end = free a va_list
 // va_arg = Retrieve an argument
-// int main() 
-// {
-//     int n = 123456789;
-//     unsigned int u_n = 234;
-//     char c = 'a';
-//     char *str = "ciao sono luca";
-//     void *ptr = &n;  // Puntatore a una variabile int
+ int main() 
+ {
+     int n = 123456789;
+     unsigned int u_n = 234;
+     char c = 'a';
+     char *str = "ciao sono luca";
+     void *ptr = &n;   //Puntatore a una variabile int
 
-// 	ft_printf("Carattere: %c\n", c);
-// 	ft_printf("Stringa: %s\n", str);
-// 	ft_printf("Puntatore: %p\n", ptr);
-//     ft_printf("Numero intero in base 10: %d\n", n);
-// 	ft_printf("Numero intero: %i\n", n);
-//     ft_printf("Numero intero senza segno: %u\n", u_n);
-// 	printf("%i", ft_printf("Numero intero senza segno: %u\n", u_n));
-// 	printf("Numero intero senza segno: %u\n", u_n);
-// 	ft_printf("Numero intero in esadecimale minuscolo: %x\n", n);
-// 	ft_printf("Numero intero in esadecimale maiuscolo: %X\n", n);
-// 	ft_printf("percentuale: %%\n");
-//     return (0);
-// }
+ 	ft_printf("Carattere: %c\n", c);
+ 	ft_printf("Stringa: %s\n", str);
+ 	ft_printf("Puntatore: %p\n", ptr);
+     ft_printf("Numero intero in base 10: %d\n", n);
+ 	ft_printf("Numero intero: %i\n", n);
+     ft_printf("Numero intero senza segno: %u\n", u_n);
+ 	printf("%i", ft_printf("Numero intero senza segno: %u\n", u_n));
+ 	printf("Numero intero senza segno: %u\n", u_n);
+ 	ft_printf("Numero intero in esadecimale minuscolo: %x\n", n);
+ 	ft_printf("Numero intero in esadecimale maiuscolo: %X\n", n);
+ 	ft_printf("percentuale: %%\n");
+     return (0);
+ }

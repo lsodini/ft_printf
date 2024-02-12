@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf_utils.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: lsodini <lsodini@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/02 18:12:26 by marvin            #+#    #+#             */
-/*   Updated: 2024/02/02 18:12:26 by marvin           ###   ########.fr       */
+/*   Created: 2024/02/12 15:51:41 by lsodini           #+#    #+#             */
+/*   Updated: 2024/02/12 15:51:41 by lsodini          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ int	ft_numhex_low(unsigned int num)
 	char	*num_hex_low;
 	int				i;
 
-	num_hex_low = "0123456789abcdef"
+	num_hex_low = "0123456789abcdef";
 	i = 0;
 	if (num >= 16)
 	{
@@ -64,7 +64,7 @@ int	ft_numhex_low(unsigned int num)
 	return (i);
 }
 
-int	ft_num_hex_up(unsigned int num)
+int	ft_numhex_up(unsigned int num)
 {
 	char *num_hex_up;
 	int			i;
@@ -73,8 +73,8 @@ int	ft_num_hex_up(unsigned int num)
 	i = 0;
 	if (num >= 16)
 	{
-		i += ft_num_hex_up(num / 16);
-		i += ft_num_hex_up(num % 16);
+		i += ft_numhex_up(num / 16);
+		i += ft_numhex_up(num % 16);
 	}
 	else
 		i += ft_putchar(num_hex_up[num]);
@@ -94,11 +94,10 @@ int	ft_pointer_numhex(uintptr_t ptr, int index)
 		i += ft_putstr("0x");
 	if (ptr >= 16)
 	{
-		i += ft_pointer_numhex(ptr /16, 1);
-		i += ft_pointer_numhex(ptr %16, 1);
+		i += ft_pointer_numhex(ptr / 16, 1);
+		i += ft_pointer_numhex(ptr % 16, 1);
 	}
-	else
+	else 
 		i += ft_putchar(num_hex_low[ptr]);
 	return (i);
-
 }
