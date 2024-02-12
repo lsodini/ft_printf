@@ -57,8 +57,8 @@ int	ft_printf(const char *i, ...)
 	{
 		if (i[j] == '%')
 		{
-			tipo += ft_print(arg, i[j]);
 			j++;
+			tipo += ft_print(arg, i[j]);
 		}
 		else
 			tipo += ft_putchar(i[j]);
@@ -71,7 +71,7 @@ int	ft_printf(const char *i, ...)
 // va_start = start iterating arguments with a va_list
 // va_end = free a va_list
 // va_arg = Retrieve an argument
- int main() 
+/* int main() 
  {
      int n = 123456789;
      unsigned int u_n = 234;
@@ -85,10 +85,8 @@ int	ft_printf(const char *i, ...)
      ft_printf("Numero intero in base 10: %d\n", n);
  	ft_printf("Numero intero: %i\n", n);
      ft_printf("Numero intero senza segno: %u\n", u_n);
- 	printf("%i", ft_printf("Numero intero senza segno: %u\n", u_n));
- 	printf("Numero intero senza segno: %u\n", u_n);
  	ft_printf("Numero intero in esadecimale minuscolo: %x\n", n);
  	ft_printf("Numero intero in esadecimale maiuscolo: %X\n", n);
  	ft_printf("percentuale: %%\n");
      return (0);
- }
+ }*/
