@@ -24,7 +24,7 @@ int	ft_putstr(char *str)
 	return (i);
 }
 
-int ft_putnbr(long n)
+int	ft_putnbr(long n)
 {
 	int	i;
 
@@ -50,7 +50,7 @@ int ft_putnbr(long n)
 int	ft_numhex_low(unsigned int num)
 {
 	char	*num_hex_low;
-	int				i;
+	int		i;
 
 	num_hex_low = "0123456789abcdef";
 	i = 0;
@@ -66,8 +66,8 @@ int	ft_numhex_low(unsigned int num)
 
 int	ft_numhex_up(unsigned int num)
 {
-	char *num_hex_up;
-	int			i;
+	char	*num_hex_up;
+	int		i;
 
 	num_hex_up = "0123456789ABCDEF";
 	i = 0;
@@ -83,7 +83,7 @@ int	ft_numhex_up(unsigned int num)
 
 int	ft_pointer_numhex(uintptr_t ptr, int index)
 {
-	int	i;
+	int		i;
 	char	*num_hex_low;
 
 	num_hex_low = "0123456789abcdef";
@@ -97,7 +97,7 @@ int	ft_pointer_numhex(uintptr_t ptr, int index)
 		i += ft_pointer_numhex(ptr / 16, 1);
 		i += ft_pointer_numhex(ptr % 16, 1);
 	}
-	else 
+	else
 		i += ft_putchar(num_hex_low[ptr]);
 	return (i);
 }
