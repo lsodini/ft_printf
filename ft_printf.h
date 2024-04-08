@@ -24,7 +24,8 @@ int				ft_putnbr(long n);
 int				ft_putstr(char *str);
 int				ft_numhex_low(unsigned int num);
 int				ft_numhex_up(unsigned int num);
-int				ft_pointer_numhex(uintptr_t ptr, int w);
+int				ft_pointer_numhex(uintptr_t ptr, int index);
+int				ft_print(va_list arg, const char wit);
 #endif
 /*
 va_list -> type for iterating arguments
